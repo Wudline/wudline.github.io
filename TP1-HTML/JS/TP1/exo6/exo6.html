@@ -1,0 +1,46 @@
+<!--
+<audio id="player" controls preload tabindex="0" ontimeupdate="updateCanvas()">
+	<source type="audio/wav" src="./audioles/myWav.wav"/> 
+	<source type="audio/mp3" src="./audioles/myMp3.mp3"/>
+	Your  browser does not support HTML5 audio.
+</audio>
+-->
+
+<canvas id="myCanvas" width="200" height="200" style="border: 0.1rem solid #ccc;"></canvas>
+<button id="playBtn">PLAY</button>
+
+<script type="text/javascript">
+	
+	window.addEventListener("DOMContentLoaded", init);
+
+		let musique;
+		let buttonElt;
+		let canvas;
+
+		function init(){
+			musique = new Audio('test.mp3');
+			buttonElt = document.getElementById("playBtn");
+			buttonElt.addEventListener("click",playPause);
+			canvas = document.getElementById("myCanvas").getContext("2d");
+			musique.addEventListener("timeupdate",updateCanvas) ; 
+		}
+
+		function playPause(){
+			if (musique.paused) {
+				musique.play();
+				buttonElt.innerHTML = "PAUSE"
+			} else {
+				musique.pause();
+				buttonElt.innerHTML = "PLAY"
+			}
+		}
+
+		function updateCanvas(event){
+			const progress = musique.currentTime / musique.duration;
+			console.log(progress);
+			canvas.beginPath();
+			canvas.arc(75, 75, 50, 0, progress * 2 * Math.PI);
+			canvas.stroke();
+		}
+
+</script>

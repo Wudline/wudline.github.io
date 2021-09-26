@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function init()
+		{
+			laDiv1=document.createElement('div');
+			laDiv1.setAttribute('id','div1');
+			laDiv2=document.getElementById('div2');
+			laDiv1.setAttribute('style',"border-color:red; border-style: dotted;");
+			laDiv2.appendChild(laDiv1);
+		}
+	</script>
+	</head>
+	<body onload='init()'>
+		<div id='div2' style="border-color:black; border-style: solid;"></div>
+	</body>
+</html>
+
+<!--
+
+	Réponses : 
+
+	1. Dans le corps HTML on trouve une div.
+		Le script JS permet de : 
+		- créer un element "div" appeler "laDiv1"
+		- donner à ce 1er element l'attribut "id = div1"
+		- récupérer un element d'id "div2" dans une variable "laDiv2"
+		- donner à l'element "laDiv1" un style
+		- faire de 'laDiv1" un sous élément de "laDiv2"
+
+	2. getElementsByName, getElementsByClassName, getElementsByTagName
+
+	3. créer un element paragraphe, puis lui affecté une valeur et faire de ce paragraphe un enfant de laDiv1 
+
+		txt = document.creatElement('p');
+		txt.append("random txt");
+		laDiv1.appendChild(txt);
+	
+
+	Correction : 
+
+-->

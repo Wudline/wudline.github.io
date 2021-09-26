@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var a = 1;
+			var b = "x";
+			c = 3;
+			function fonction1()
+			{
+				var a = 2;
+				b = 3;
+				c = 1;
+				alert("fonction1: a vaut "+a+", b vaut "+b+" et c vaut "+c); 
+			}
+			function fonction2(d)
+			{
+				alert("fonction2 :a vaut "+a+", b vaut "+b+", c vaut "+c+" et d vaut "+d);
+			}
+			fonction1();
+			fonction2(a);
+		</script>
+	</head>
+	<body></body>
+</html>
+
+
+<!--
+
+	Réponses : 
+	
+	- "var" permet de déclarer une variable et éventuellement d'initialiser sa valeur.
+	- La variable globale est une variable d'une valeur visible dans toute la page
+	- La variable locale est une variable dont la valeur est temporaire : le temps d'une fonction.
+	- Le typage d'une variable globale est donc statique là où une variable local sera dynamique
+
+	Correction : 
+
+	porté fonction là où les autres langages est de type block
+	typage : passage d'un type à l'autre sans pb
+	donc attention aux variables globales
+	=> les enfermées dans une fonction (éviter à tous prix les variables non encapsulées)
+
+	Mots clés "let" et "const" : porté block (à la différence de "var")
+	"const" à un comprtement de "constante"
+	
+-->
